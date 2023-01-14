@@ -65,19 +65,16 @@ else:
 
 
 def convert():
-    global codec
-    global inpdir
-    global enddir
     if codec == "x265":
         fourcc = cv2.VideoWriter_fourcc(*'x265')
     elif codec == "x264":
         fourcc = cv2.VideoWriter_fourcc(*'x264')
     else:
         raise VideoCodecError(red + "Unknown codec" + reset)
-    cap = cv2.VideoCapture(inpdir)    # TODO: Add input
+    cap = cv2.VideoCapture(inpdir)
     fps = cap.get(cv2.CAP_PROP_FPS)
     frame_size = (int(cap.get(3)), int(cap.get(4)))
-    out = cv2.VideoWriter(enddir, fourcc, fps, frame_size, True)  # TODO: Add output
+    out = cv2.VideoWriter(enddir, fourcc, fps, frame_size, True)
     while True:
         ret, frame = cap.read()
         if ret:
