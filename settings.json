@@ -1,0 +1,12 @@
+{   
+    "import": {
+        "start_directory": ""
+    },
+    "export": {
+        "end_directory": ""
+    },
+    "rendering": {
+        "threads": 1,
+        "codec": "x265"
+    }
+}
